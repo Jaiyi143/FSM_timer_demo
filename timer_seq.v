@@ -1,0 +1,84 @@
+/*==================================
+     
+====================================
+Description:
+
+
+Design Engineer:
+
+Gomez,Sergie D.
+
+Date:
+March 31 2026
+----------------------------------*/
+module timer_seq(out,state,clk,rst_n,ovr,timer);
+// ports
+input            clk;
+input            rst_n;
+input            ovr;
+output reg [3:0] timer;
+output reg       out;
+output reg [3:0] state;
+
+
+// state assignment
+parameter [3:0] S0 = 4'b0000;
+parameter [3:0] S1 = 4'b0001;
+parameter [3:0] S2 = 4'b0010;
+parameter [3:0] S3 = 4'b0011;
+reg [3:0] nxt;//next state
+reg [3:0] pre;//present state
+reg [3:0] t=0;
+
+
+// input block
+always @(t,pre)begin
+ case (pre)
+   S0: nxt = (t==2)? S1:S0;
+   S1: nxt = (t==3)? S2:S1;
+   S2: nxt = (t==2)? S0:S2;
+   S3: nxt = (t==1)? S3:S0;
+   
+
+   
+   default: nxt = S0;
+	endcase
+  end
+ 
+ 
+// sequential block
+ always @(posedge clk,negedge rst_n)begin
+if(!rst_n)begin
+t = 0;
+ovr = 0;
+end
+	else pre<=nxt;
+	if(pre==S0)begin
+		if(t==2)begin
+			nxt<=S1;
+			t<=0;
+		end
+		else t=t+1;
+	end
+	else if(pre==S1)begin
+		if(t==3) begin 
+			nxt<=S2;
+			t<=0;
+		end
+		else t=t+1;
+	end
+	else if(pre==S2)begin
+		if(t==2)begin
+			nxt<=S0;
+			t<=0;
+		end
+		else t=t+1;
+	end
+	else if(ovr)begin
+	nxt<=S3;
+	t<=0;
+	end
+end
+
+
+endmodule

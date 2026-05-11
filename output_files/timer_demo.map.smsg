@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at timer_seq.v(50): always construct contains both blocking and non-blocking assignments File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v Line: 50

@@ -1,0 +1,81 @@
+|top_seq_timer
+out <= timer_seq:seq0110.out
+hex[6] <= bcd_7seg:seg7.hex
+hex[5] <= bcd_7seg:seg7.hex
+hex[4] <= bcd_7seg:seg7.hex
+hex[3] <= bcd_7seg:seg7.hex
+hex[2] <= bcd_7seg:seg7.hex
+hex[1] <= bcd_7seg:seg7.hex
+hex[0] <= bcd_7seg:seg7.hex
+clk_led <= clk_div:clk_div_ins.clk_led
+clk_in => clk_in.IN1
+rst_n => rst_n.IN1
+in => in.IN1
+
+
+|top_seq_timer|clk_div:clk_div_ins
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk_led <= clk_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk_in => tick_cnt[0].CLK
+clk_in => tick_cnt[1].CLK
+clk_in => tick_cnt[2].CLK
+clk_in => tick_cnt[3].CLK
+clk_in => tick_cnt[4].CLK
+clk_in => tick_cnt[5].CLK
+clk_in => tick_cnt[6].CLK
+clk_in => tick_cnt[7].CLK
+clk_in => tick_cnt[8].CLK
+clk_in => tick_cnt[9].CLK
+clk_in => tick_cnt[10].CLK
+clk_in => tick_cnt[11].CLK
+clk_in => tick_cnt[12].CLK
+clk_in => tick_cnt[13].CLK
+clk_in => tick_cnt[14].CLK
+clk_in => tick_cnt[15].CLK
+clk_in => tick_cnt[16].CLK
+clk_in => tick_cnt[17].CLK
+clk_in => tick_cnt[18].CLK
+clk_in => tick_cnt[19].CLK
+clk_in => tick_cnt[20].CLK
+clk_in => tick_cnt[21].CLK
+clk_in => tick_cnt[22].CLK
+clk_in => tick_cnt[23].CLK
+clk_in => tick_cnt[24].CLK
+clk_in => tick_cnt[25].CLK
+clk_in => tick_cnt[26].CLK
+clk_in => tick_cnt[27].CLK
+clk_in => tick_cnt[28].CLK
+clk_in => tick_cnt[29].CLK
+clk_in => tick_cnt[30].CLK
+clk_in => tick_cnt[31].CLK
+clk_in => clk_led~reg0.CLK
+clk_in => clk_out~reg0.CLK
+
+
+|top_seq_timer|timer_seq:seq0110
+out <= state[2].DB_MAX_OUTPUT_PORT_TYPE
+state[0] <= state.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state.DB_MAX_OUTPUT_PORT_TYPE
+state[2] <= state[2].DB_MAX_OUTPUT_PORT_TYPE
+in => nxt.S2.DATAB
+in => nxt.S3.DATAB
+in => Selector0.IN1
+in => Selector1.IN1
+in => nxt.S4.DATAB
+clk => pre~1.DATAIN
+rst_n => pre~3.DATAIN
+
+
+|top_seq_timer|bcd_7seg:seg7
+hex[6] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+bcd[0] => Decoder0.IN2
+bcd[1] => Decoder0.IN1
+bcd[2] => Decoder0.IN0
+
+
