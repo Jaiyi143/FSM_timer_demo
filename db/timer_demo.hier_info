@@ -1,16 +1,23 @@
 |top_seq_timer
-out <= timer_seq:seq0110.out
-hex[6] <= bcd_7seg:seg7.hex
-hex[5] <= bcd_7seg:seg7.hex
-hex[4] <= bcd_7seg:seg7.hex
-hex[3] <= bcd_7seg:seg7.hex
-hex[2] <= bcd_7seg:seg7.hex
-hex[1] <= bcd_7seg:seg7.hex
-hex[0] <= bcd_7seg:seg7.hex
-clk_led <= clk_div:clk_div_ins.clk_led
+out << timer_seq:timer.out
+hex_timer[6] << bcd_7seg:seg7_timer.hex
+hex_timer[5] << bcd_7seg:seg7_timer.hex
+hex_timer[4] << bcd_7seg:seg7_timer.hex
+hex_timer[3] << bcd_7seg:seg7_timer.hex
+hex_timer[2] << bcd_7seg:seg7_timer.hex
+hex_timer[1] << bcd_7seg:seg7_timer.hex
+hex_timer[0] << bcd_7seg:seg7_timer.hex
+hex_state[6] << bcd_7seg:seg7_state.hex
+hex_state[5] << bcd_7seg:seg7_state.hex
+hex_state[4] << bcd_7seg:seg7_state.hex
+hex_state[3] << bcd_7seg:seg7_state.hex
+hex_state[2] << bcd_7seg:seg7_state.hex
+hex_state[1] << bcd_7seg:seg7_state.hex
+hex_state[0] << bcd_7seg:seg7_state.hex
+clk_led << clk_div:clk_div_ins.clk_led
 clk_in => clk_in.IN1
 rst_n => rst_n.IN1
-in => in.IN1
+ovr => ovr.IN1
 
 
 |top_seq_timer|clk_div:clk_div_ins
@@ -52,30 +59,78 @@ clk_in => clk_led~reg0.CLK
 clk_in => clk_out~reg0.CLK
 
 
-|top_seq_timer|timer_seq:seq0110
-out <= state[2].DB_MAX_OUTPUT_PORT_TYPE
-state[0] <= state.DB_MAX_OUTPUT_PORT_TYPE
+|top_seq_timer|timer_seq:timer
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+state[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
 state[1] <= state.DB_MAX_OUTPUT_PORT_TYPE
-state[2] <= state[2].DB_MAX_OUTPUT_PORT_TYPE
-in => nxt.S2.DATAB
-in => nxt.S3.DATAB
-in => Selector0.IN1
-in => Selector1.IN1
-in => nxt.S4.DATAB
-clk => pre~1.DATAIN
-rst_n => pre~3.DATAIN
+state[2] <= <GND>
+state[3] <= <GND>
+clk => t[0].CLK
+clk => t[1].CLK
+clk => t[2].CLK
+clk => t[3].CLK
+clk => pre_state~1.DATAIN
+rst_n => t[0].ACLR
+rst_n => t[1].ACLR
+rst_n => t[2].ACLR
+rst_n => t[3].ACLR
+rst_n => pre_state~3.DATAIN
+ovr => nxt_state.S0.OUTPUTSELECT
+ovr => nxt_state.S1.OUTPUTSELECT
+ovr => nxt_state.S2.OUTPUTSELECT
+ovr => t.OUTPUTSELECT
+ovr => t.OUTPUTSELECT
+ovr => t.OUTPUTSELECT
+ovr => t.OUTPUTSELECT
+ovr => Selector0.IN2
+ovr => pre_state.S3.DATAIN
+timer[0] <= t[0].DB_MAX_OUTPUT_PORT_TYPE
+timer[1] <= t[1].DB_MAX_OUTPUT_PORT_TYPE
+timer[2] <= t[2].DB_MAX_OUTPUT_PORT_TYPE
+timer[3] <= t[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_seq_timer|bcd_7seg:seg7
-hex[6] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-hex[5] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-hex[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-hex[3] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-hex[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-hex[1] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+|top_seq_timer|bcd_7seg:seg7_timer
+hex[6] <= Decoder3.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
 hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-bcd[0] => Decoder0.IN2
-bcd[1] => Decoder0.IN1
-bcd[2] => Decoder0.IN0
+bcd[0] => Decoder0.IN3
+bcd[0] => Decoder2.IN2
+bcd[1] => Decoder0.IN2
+bcd[1] => Decoder3.IN2
+bcd[2] => Decoder0.IN1
+bcd[2] => Decoder1.IN1
+bcd[2] => Decoder2.IN1
+bcd[2] => Decoder3.IN1
+bcd[3] => Decoder0.IN0
+bcd[3] => Decoder1.IN0
+bcd[3] => Decoder2.IN0
+bcd[3] => Decoder3.IN0
+
+
+|top_seq_timer|bcd_7seg:seg7_state
+hex[6] <= Decoder3.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+bcd[0] => Decoder0.IN3
+bcd[0] => Decoder2.IN2
+bcd[1] => Decoder0.IN2
+bcd[1] => Decoder3.IN2
+bcd[2] => Decoder0.IN1
+bcd[2] => Decoder1.IN1
+bcd[2] => Decoder2.IN1
+bcd[2] => Decoder3.IN1
+bcd[3] => Decoder0.IN0
+bcd[3] => Decoder1.IN0
+bcd[3] => Decoder2.IN0
+bcd[3] => Decoder3.IN0
 
 

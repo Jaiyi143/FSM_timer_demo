@@ -1,5 +1,5 @@
-Analysis & Elaboration report for timer_demo
-Mon May 11 14:59:46 2026
+Analysis & Synthesis report for timer_demo
+Mon May 11 20:27:22 2026
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -7,11 +7,19 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
-  6. Analysis & Elaboration Suppressed Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top_seq_timer|timer_seq:timer|pre_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: clk_div:clk_div_ins
+ 13. Parameter Settings for User Entity Instance: timer_seq:timer
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -35,35 +43,23 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Failed - Mon May 11 14:59:46 2026           ;
-; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                 ; timer_demo                                  ;
-; Top-level Entity Name         ; top_seq_timer                               ;
-; Family                        ; MAX II                                      ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 8           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon May 11 20:27:22 2026       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; timer_demo                                  ;
+; Top-level Entity Name       ; top_seq_timer                               ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 104                                         ;
+; Total pins                  ; 19                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                            ;
+; Analysis & Synthesis Settings                                                                              ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
@@ -133,37 +129,190 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; top_seq_timer.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v ;         ;
+; timer_seq.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v     ;         ;
+; clk_div.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/clk_div.v       ;         ;
+; bcd_7seg.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/bcd_7seg.v      ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 104    ;
+;     -- Combinational with no register       ; 62     ;
+;     -- Register only                        ; 21     ;
+;     -- Combinational with a register        ; 21     ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 22     ;
+;     -- 3 input functions                    ; 6      ;
+;     -- 2 input functions                    ; 52     ;
+;     -- 1 input functions                    ; 3      ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 73     ;
+;     -- arithmetic mode                      ; 31     ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 0      ;
+;     -- asynchronous clear/load mode         ; 8      ;
+;                                             ;        ;
+; Total registers                             ; 42     ;
+; Total logic cells in carry chains           ; 32     ;
+; I/O pins                                    ; 19     ;
+; Maximum fan-out node                        ; clk_in ;
+; Maximum fan-out                             ; 34     ;
+; Total fan-out                               ; 301    ;
+; Average fan-out                             ; 2.45   ;
++---------------------------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                ; Entity Name   ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+---------------+--------------+
+; |top_seq_timer             ; 104 (0)     ; 42           ; 0          ; 19   ; 0            ; 62 (0)       ; 21 (0)            ; 21 (0)           ; 32 (0)          ; 0 (0)      ; |top_seq_timer                     ; top_seq_timer ; work         ;
+;    |bcd_7seg:seg7_state|   ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |top_seq_timer|bcd_7seg:seg7_state ; bcd_7seg      ; work         ;
+;    |bcd_7seg:seg7_timer|   ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |top_seq_timer|bcd_7seg:seg7_timer ; bcd_7seg      ; work         ;
+;    |clk_div:clk_div_ins|   ; 77 (77)     ; 34           ; 0          ; 0    ; 0            ; 43 (43)      ; 20 (20)           ; 14 (14)          ; 32 (32)         ; 0 (0)      ; |top_seq_timer|clk_div:clk_div_ins ; clk_div       ; work         ;
+;    |timer_seq:timer|       ; 18 (18)     ; 8            ; 0          ; 0    ; 0            ; 10 (10)      ; 1 (1)             ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |top_seq_timer|timer_seq:timer     ; timer_seq     ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------+
+; State Machine - |top_seq_timer|timer_seq:timer|pre_state                 ;
++--------------+--------------+--------------+--------------+--------------+
+; Name         ; pre_state.S3 ; pre_state.S2 ; pre_state.S1 ; pre_state.S0 ;
++--------------+--------------+--------------+--------------+--------------+
+; pre_state.S0 ; 0            ; 0            ; 0            ; 0            ;
+; pre_state.S1 ; 0            ; 0            ; 1            ; 1            ;
+; pre_state.S2 ; 0            ; 1            ; 0            ; 1            ;
+; pre_state.S3 ; 1            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; timer_seq:timer|pre_state~4           ; Lost fanout        ;
+; timer_seq:timer|pre_state~5           ; Lost fanout        ;
+; timer_seq:timer|pre_state~6           ; Lost fanout        ;
+; timer_seq:timer|pre_state~7           ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 42    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top_seq_timer|timer_seq:timer|t[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_div:clk_div_ins ;
++----------------+----------+--------------------------------------+
+; Parameter Name ; Value    ; Type                                 ;
++----------------+----------+--------------------------------------+
+; FREQ_IN        ; 50000000 ; Signed Integer                       ;
+; PERIOD_OUT     ; 1        ; Signed Integer                       ;
++----------------+----------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer_seq:timer ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; S0             ; 0000  ; Unsigned Binary                     ;
+; S1             ; 0001  ; Unsigned Binary                     ;
+; S2             ; 0010  ; Unsigned Binary                     ;
+; S3             ; 0011  ; Unsigned Binary                     ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon May 11 14:59:38 2026
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off timer_demo -c timer_demo --analysis_and_elaboration
+    Info: Processing started: Mon May 11 20:27:13 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off timer_demo -c timer_demo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file top_seq_timer.v
     Info (12023): Found entity 1: top_seq_timer File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file timer_seq.v
-    Info (12023): Found entity 1: timer_seq File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v Line: 14
+    Info (12023): Found entity 1: timer_seq File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file clk_div.v
     Info (12023): Found entity 1: clk_div File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/clk_div.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file bcd_7seg.v
     Info (12023): Found entity 1: bcd_7seg File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/bcd_7seg.v Line: 1
-Error (10137): Verilog HDL Procedural Assignment error at timer_seq.v(53): object "ovr" on left-hand side of assignment must have a variable data type File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v Line: 53
-Error (10231): Verilog HDL error at timer_seq.v(53): value cannot be assigned to input "ovr" File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v Line: 53
-Info (144001): Generated suppressed messages file C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/output_files/timer_demo.map.smsg
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 4702 megabytes
-    Error: Processing ended: Mon May 11 14:59:46 2026
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:21
-
-
-+--------------------------------------------+
-; Analysis & Elaboration Suppressed Messages ;
-+--------------------------------------------+
-The suppressed messages can be found in C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/output_files/timer_demo.map.smsg.
+Info (12127): Elaborating entity "top_seq_timer" for the top level hierarchy
+Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:clk_div_ins" File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v Line: 23
+Info (12128): Elaborating entity "timer_seq" for hierarchy "timer_seq:timer" File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v Line: 33
+Info (12128): Elaborating entity "bcd_7seg" for hierarchy "bcd_7seg:seg7_timer" File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v Line: 39
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "hex_state[1]" is stuck at VCC File: C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v Line: 11
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 123 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 104 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4713 megabytes
+    Info: Processing ended: Mon May 11 20:27:22 2026
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:22
 
 

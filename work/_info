@@ -1,0 +1,126 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo
+vbcd_7seg
+Z1 !s110 1778502137
+!i10b 1
+!s100 J?aW_=k:=MdD8S3dWW:kL1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+InRLgSIINb2O[[8E6W5N311
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1778496193
+8C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/bcd_7seg.v
+FC:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/bcd_7seg.v
+!i122 213
+L0 1 23
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1778502136.000000
+!s107 C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/bcd_7seg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/bcd_7seg.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vclk_div
+R1
+!i10b 1
+!s100 4g@3^KoAbML>7YV>MZGPQ2
+R2
+I:Mn>l9lP6eO_4=<>KboX@0
+R3
+R0
+w1778501793
+8C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/clk_div.v
+FC:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/clk_div.v
+!i122 214
+L0 15 23
+R4
+r1
+!s85 0
+31
+Z7 !s108 1778502137.000000
+!s107 C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/clk_div.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/clk_div.v|
+!i113 1
+R5
+R6
+vtestbench
+R1
+!i10b 1
+!s100 Qem4FG8G9zBkT[T:4<@EG1
+R2
+I_A08MHCoiW7W6fTh0;oz31
+R3
+R0
+w1778502133
+8C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/testbench.v
+FC:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/testbench.v
+!i122 215
+L0 2 39
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/testbench.v|
+!i113 1
+R5
+R6
+vtimer_seq
+R1
+!i10b 1
+!s100 ;6g>S2z<MEaF1SiTHA[9F0
+R2
+I0Xb7XYRNFYE_711f>R1a[0
+R3
+R0
+w1778497660
+8C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v
+FC:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v
+!i122 216
+L0 12 84
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/timer_seq.v|
+!i113 1
+R5
+R6
+vtop_seq_timer
+R1
+!i10b 1
+!s100 XBc[m;KTZbY1hLa=G>^LL0
+R2
+IBhQ361HAaH0CCK^?:Nz_83
+R3
+R0
+w1778501806
+8C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v
+FC:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v
+!i122 217
+L0 2 46
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sergie/Desktop/FSM_DEMO/FSM_timer_demo/top_seq_timer.v|
+!i113 1
+R5
+R6

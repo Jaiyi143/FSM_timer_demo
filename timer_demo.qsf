@@ -53,3 +53,22 @@ set_global_assignment -name VERILOG_FILE timer_seq.v
 set_global_assignment -name VERILOG_FILE clk_div.v
 set_global_assignment -name VERILOG_FILE bcd_7seg.v
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_location_assignment PIN_12 -to clk_in
+set_location_assignment PIN_1 -to hex_state[0]
+set_location_assignment PIN_2 -to hex_state[1]
+set_location_assignment PIN_3 -to hex_state[2]
+set_location_assignment PIN_4 -to hex_state[3]
+set_location_assignment PIN_5 -to hex_state[4]
+set_location_assignment PIN_6 -to hex_state[5]
+set_location_assignment PIN_7 -to hex_state[6]
+set_location_assignment PIN_92 -to hex_timer[0]
+set_location_assignment PIN_91 -to hex_timer[1]
+set_location_assignment PIN_95 -to hex_timer[2]
+set_location_assignment PIN_96 -to hex_timer[3]
+set_location_assignment PIN_97 -to hex_timer[4]
+set_location_assignment PIN_98 -to hex_timer[5]
+set_location_assignment PIN_99 -to hex_timer[6]
+set_location_assignment PIN_76 -to out
+set_location_assignment PIN_75 -to ovr
+set_location_assignment PIN_74 -to rst_n
+set_location_assignment PIN_73 -to clk_led

@@ -1,5 +1,9 @@
-Analysis & Elaboration Status : Failed - Mon May 11 14:59:46 2026
+Analysis & Synthesis Status : Successful - Mon May 11 20:27:22 2026
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : timer_demo
 Top-level Entity Name : top_seq_timer
 Family : MAX II
+Total logic elements : 104
+Total pins : 19
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
