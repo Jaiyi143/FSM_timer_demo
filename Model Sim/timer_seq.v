@@ -1,13 +1,16 @@
 /*==================================
-     
+     		FSM TIMER 
 ====================================
 Description:
+FSM WITH INTERNAL TIMER BASED ON 
+	STATE DIAGRAM. TIMER COUNTS CLOCK 
+	CYCLES SPENT IN EACH STATE.
 
 Design Engineer:
 Gomez,Sergie D.
 
 Date:
-March 31 2026
+May 11 2026
 ----------------------------------*/
 module timer_seq(out,state,clk,rst_n,ovr,timer);
 // ports

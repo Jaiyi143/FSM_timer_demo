@@ -1,3 +1,14 @@
+/*======================================================
+ BINARY-CODED-DECIMAL TO 7-SEGMENT COMMON-ANODE DISPLAY
+========================================================
+Description:
+ This module takes 4-bit decimal value and translate
+ it in a 7-segment common-anode display.
+
+
+*/
+
+
 module bcd_7seg(hex,bcd);
 	//ports and nets
 
